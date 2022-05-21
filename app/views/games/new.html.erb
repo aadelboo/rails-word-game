@@ -1,0 +1,22 @@
+
+<div class="container">
+  <div class="title">
+    <h1>Hello 👋<br> Welcome in Word's game 🚀</h1>
+    <p>Try to create the longest word with the letters above</p>
+  </div>
+  <div class="letters">
+    <ul>
+      <% @letters.each do |letter| %>
+      <li><%= letter %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="user">
+    <form action="/score" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letters, @letters %>
+    <input type="text" name="word">
+    <input type="submit" value="Check your word!">
+    </form>
+  </div>
+</div>

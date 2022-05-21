@@ -1,0 +1,20 @@
+
+<div class="container">
+  <div class="result">
+    <h1>Please find your results</h1>
+  </div>
+  <div class="user_score">
+    <% if @included %>
+      <% if @english_word %>
+        <p> <strong>Congratulations</strong> <%= @word %> is an english word</p>
+      <% else %>
+         <p>🤔<strong> <%= @word %> </strong> is not a english word</p>
+      <% end %>
+    <% else %>
+      <p> <strong>Sorry</strong> you have to create a word with this <%= @letters %></p>
+    <% end %>
+  </div>
+  <div class="again">
+    <%= link_to "Play again!", new_path %>
+  </div>
+</div>
